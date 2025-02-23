@@ -1,0 +1,66 @@
+{
+  "name": "my-awesome-react-timer",
+  "version": "1.0.0",
+  "description": "A React hook and Timer component",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "sass": "^1.85.0"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.4",
+    "@eslint/js": "^9.19.0",
+    "@storybook/addon-essentials": "^8.5.8",
+    "@storybook/addon-interactions": "^8.5.8",
+    "@storybook/addon-onboarding": "^8.5.8",
+    "@storybook/blocks": "^8.5.8",
+    "@storybook/react": "^8.5.8",
+    "@storybook/react-vite": "^8.5.8",
+    "@storybook/test": "^8.5.8",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "eslint-plugin-storybook": "^0.11.3",
+    "globals": "^15.14.0",
+    "prettier": "^3.5.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "storybook": "^8.5.8",
+    "vite": "^6.1.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "react",
+    "timer",
+    "hook"
+  ],
+  "license": "MIT",
+  "author": "Adi Malka"
+}
