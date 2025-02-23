@@ -1,10 +1,10 @@
 {
   "name": "my-awesome-react-timer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React hook and Timer component",
   "private": false,
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/my-awesome-react-timer.es.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

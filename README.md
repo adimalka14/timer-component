@@ -2,6 +2,9 @@
 
 A React hook (`useTimer`) and a Timer component that make it easy to create both countdown or count-up timers in your React applications. This library provides simple, configurable timers with optional SVG-based progress indicators (circles, lines), warning colors for critical times, and more.
 
+## Storybook Live Demo
+[Live Storybook Demo](https://adimalka14.github.io/timer-component/storybook-static)
+
 ## Table of Contents
 
 - [Features](#features)
@@ -110,6 +113,12 @@ stopTimer: () => void,      // function to pause the timer
 resetTimer: (val?: number) => void, // resets time to initial or to a custom value
 }
 ```
+## Demo
+![Final Outcome](assets/final-outcome1.png)
+![Final Outcome](assets/final-outcome3.png)
+![Final Outcome](assets/final-outcome4.png)
+![Final Outcome](assets/final-outcome2.png)
+
 ## Contributing
 1. Fork this repository
 2. Create a new branch for your feature or bugfix: git checkout -b feature/some-improvement
@@ -119,4 +128,3 @@ resetTimer: (val?: number) => void, // resets time to initial or to a custom val
 
 ## License
 This project is licensed under the [MIT License](./LICENSE).
-
