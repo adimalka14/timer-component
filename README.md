@@ -1,6 +1,6 @@
 # my-awesome-react-timer
 
-A React hook (`useTimer`) and a Timer component that make it easy to create both countdown or count-up timers in your React applications. This library provides simple, configurable timers with optional SVG-based progress indicators (circles, lines), warning colors for critical times, and more.
+A React hook (`useTimer`) and a Timer component that make it easy to create both countdown or count-up timers in your React applications. This library provides simple, configurable timers with optional SVG-based progress indicators (circle), warning colors for critical times, and more.
 
 ## Storybook Live Demo
 [Live Storybook Demo](https://adimalka14.github.io/timer-component/storybook-static)
