@@ -12,9 +12,13 @@ export default function useTimer({ initialTime = 60, autoStart = false, endTime 
 
         intervalRef.current = setInterval(() => {
             setTime((currentTime) => {
+                if (!isRunning) return currentTime;
+
                 if (currentTime === endTime) {
-                    setIsRunning(false);
-                    onFinished?.();
+                    if (isRunning) {
+                        setIsRunning(false);
+                        onFinished?.();
+                    }
                     return endTime;
                 }
                 return direction === 'down' ? currentTime - 1 : currentTime + 1;
