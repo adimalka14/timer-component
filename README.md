@@ -40,8 +40,8 @@ function MyTimerHookDemo() {
 const { time, startTimer, stopTimer, resetTimer } = useTimer({
 initialTime: 60,  // start at 60 seconds
 endTime: 0,       // stop at 0
-direction: 'down',
 autoStart: false, // don't start immediately
+onFinished: () => console.log('Timer finished!'),
 });
 
 return (
@@ -68,9 +68,6 @@ return (
 <div style={{ width: 150, height: 150 }}>
 <Timer
 time={50}         // current time value
-initialTime={60}  // initial time
-endTime={0}       // end time
-direction="down"
 strokeWidth={6}
 useWarningColors={true}
 frontStrokeColor="green"
@@ -88,9 +85,6 @@ export default MyTimerComponentDemo;
 | Prop                 | Type          | Default     | Description                                         |
 |----------------------|---------------|-------------|-----------------------------------------------------|
 | **time**             | `number`      | _required_  | Current time (in seconds).                          |
-| **initialTime**      | `number`      | `60`        | Starting time in seconds.                           |
-| **endTime**          | `number`      | `0`         | When the timer stops.                               |
-| **direction**        | `'up'/'down'` | `'down'`    | Timer counting up or down.                          |
 | **strokeWidth**      | `number`      | `4`         | Stroke width for the SVG circle.                    |
 | **frontStrokeColor** | `string`      | `green`     | Color for the primary/timer stroke.                 |
 | **backStrokeColor**  | `string`      | `gray`      | Background stroke color.                            |
@@ -101,8 +95,8 @@ export default MyTimerComponentDemo;
 |----------------------|---------------|----------|-----------------------------------------------------|
 | **initialTime**      | `number`      | `60`     | Starting time in seconds.                           |
 | **endTime**          | `number`      | `0`      | When the timer stops.                               |
-| **direction**        | `'up'/'down'` | `'down'` | Timer counting up or down.                          |
 | **autoStart**        | `boolean`     | `false`  | If true, starts the timer immediately.              |
+| **onFinished**       | `function`    | `() => {}`| Function to run when the timer finishes.            |
 
 #### useTimer returns an object:
 ``` jsx Copy

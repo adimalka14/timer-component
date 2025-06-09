@@ -14,9 +14,6 @@ export default {
         timeDisplayColor: { control: 'color' },
         strokeWidth: { control: { type: 'number', min: 1 } },
         useWarningColors: { control: 'boolean' },
-        direction: {
-            control: { type: 'select', options: ['up', 'down'] },
-        },
     },
 };
 

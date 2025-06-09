@@ -1,6 +1,6 @@
 {
   "name": "my-awesome-react-timer",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A React hook and Timer component",
   "private": false,
   "type": "module",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
     "@eslint/js": "^9.19.0",
+    "@storybook/addon-actions": "^8.5.8",
     "@storybook/addon-essentials": "^8.5.8",
     "@storybook/addon-interactions": "^8.5.8",
     "@storybook/addon-onboarding": "^8.5.8",
@@ -27,6 +28,7 @@
     "@storybook/react": "^8.5.8",
     "@storybook/react-vite": "^8.5.8",
     "@storybook/test": "^8.5.8",
+    "@storybook/theming": "^8.6.14",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",

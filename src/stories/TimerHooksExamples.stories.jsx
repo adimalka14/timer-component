@@ -1,4 +1,6 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
+
 import useTimer from '../hooks/useTimer/useTimer.jsx';
 import { Timer } from '../components';
 
@@ -13,20 +15,18 @@ export default {
         timeDisplayColor: { control: 'color' },
         strokeWidth: { control: { type: 'number', min: 1 } },
         useWarningColors: { control: 'boolean' },
-        direction: {
-            control: { type: 'select', options: ['up', 'down'] },
-        },
+        onFinished: { table: { disable: true } },
     },
 };
 
 const Template = (args) => {
-    const { initialTime, endTime, direction } = args;
+    const { initialTime, endTime, onFinished } = args;
 
     const { time, startTimer, stopTimer, resetTimer } = useTimer({
         initialTime,
         autoStart: false,
         endTime,
-        direction,
+        onFinished,
     });
 
 
@@ -50,5 +50,5 @@ Test.args = {
     timeDisplayColor: 'black',
     strokeWidth: 4,
     useWarningColors: true,
-    direction: 'down',
+    onFinished: action('onFinished'),
 };
