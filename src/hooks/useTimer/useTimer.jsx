@@ -1,40 +1,57 @@
 import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-export default function useTimer({ initialTime = 60, autoStart = false, endTime = 0, onFinished }) {
+export default function useTimer({
+                                     initialTime = 60,
+                                     autoStart = false,
+                                     endTime = 0,
+                                     onFinished,
+                                 }) {
     const [time, setTime] = useState(initialTime);
     const [isRunning, setIsRunning] = useState(autoStart);
-    const intervalRef = useRef(null);
     const direction = initialTime > endTime ? 'down' : 'up';
+    const startTimestampRef = useRef(autoStart ? Date.now() : null);
 
     useEffect(() => {
         if (!isRunning) return;
 
-        intervalRef.current = setInterval(() => {
-            setTime((currentTime) => {
-                if (!isRunning) return currentTime;
+        const interval = setInterval(() => {
+            const elapsedTime = (Date.now() - startTimestampRef.current) / 1000;
 
-                if (currentTime === endTime) {
-                    if (isRunning) {
-                        setIsRunning(false);
-                        onFinished?.();
-                    }
-                    return endTime;
-                }
-                return direction === 'down' ? currentTime - 1 : currentTime + 1;
-            });
-        }, 1000);
+            const newTime =
+                direction === 'down' ? time - elapsedTime : time + elapsedTime;
 
-        return () => clearInterval(intervalRef.current);
-    }, [isRunning, direction, endTime, onFinished]);
+            const isFinished =
+                direction === 'down' ? newTime <= endTime : newTime >= endTime;
 
+            if (isFinished) {
+                setTime(endTime);
+                setIsRunning(false);
+                onFinished?.();
 
-    const startTimer = () => setIsRunning(() => true);
-    const stopTimer = () => setIsRunning(() => false);
-    const resetTimer = () => setTime(() => {
-        setIsRunning(() => false);
-        return initialTime;
-    });
+                return;
+            }
+
+            setTime(Math.round(newTime));
+        }, 250);
+
+        return () => clearInterval(interval);
+    }, [isRunning]);
+
+    const startTimer = () => {
+        startTimestampRef.current = Date.now();
+        setIsRunning(true);
+    };
+
+    const stopTimer = () => {
+        startTimestampRef.current = null;
+        setIsRunning(false);
+    };
+
+    const resetTimer = () => {
+        stopTimer();
+        setTime(initialTime);
+    };
 
     return { time, startTimer, stopTimer, resetTimer };
 }

@@ -1,1 +1,1 @@
-export {default as useTimer} from "./useTimer/useTimer.jsx";
+export {default as useTimer} from "./useTimer/useTimer";

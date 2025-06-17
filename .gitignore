@@ -25,3 +25,4 @@ storybook-static
 *.sw?
 
 *storybook.log
+/out9574/
